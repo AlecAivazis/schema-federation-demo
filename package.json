@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/AlecAivazis/schema-federation-demo/issues"
   },
-  "homepage": "https://github.com/AlecAivazis/schema-federation-demo#readme"
+  "homepage": "https://github.com/AlecAivazis/schema-federation-demo#readme",
+  "dependencies": {
+    "apollo-server": "^2.3.3"
+  }
 }
