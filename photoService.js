@@ -2,13 +2,27 @@ const { ApolloServer, gql } = require("apollo-server");
 
 // The GraphQL schema
 const typeDefs = gql`
-  type User {
-    id: ID!
-    firstName: String
+  enum Species {
+    Dog
+    Cat
   }
 
-  type Query {
-    allUsers: [User]
+  type Animal {
+    id: ID!
+    species: Species
+    breed: String!
+  }
+
+  type Photo {
+    id: ID!
+    animal: Animal
+    url: String!
+  }
+
+  type User {
+    id: ID!
+    favoritePhoto: Photo
+    photoGallery: [Photo]
   }
 `;
 
