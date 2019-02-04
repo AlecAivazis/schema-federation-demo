@@ -1,7 +1,7 @@
 # Schema Federation Demo
 
 This is the project that accompanies my series on schema federation. For more information on schema federation or
-the reason for this project, read [this post]().
+the reason for this project, read [this post](https://medium.com/@aaivazis/a-guide-to-schema-federation-part-1-995b639ac035).
 
 Each post after the first has a corresponding branch in this repo that acts as the starting point for that guide.
 
