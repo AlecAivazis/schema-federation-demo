@@ -12,6 +12,8 @@ const typeDefs = gql`
   type User implements Node {
     id: ID!
     username: String!
+    firstName: String!
+    lastName: String!
     auctionHistory: [Auction]
   }
 
@@ -21,6 +23,7 @@ const typeDefs = gql`
     photo: Photo!
     offers: [Bid]
     highestOffer: Bid
+    user: User!
   }
 
   type Bid {
@@ -45,7 +48,21 @@ const typeDefs = gql`
 const users = {
   "1": {
     id: "1",
-    username: "username1"
+    username: "xXOncomingStormXx",
+    firstName: "The",
+    lastName: "Doctor"
+  },
+  "2": {
+    id: "2",
+    username: "Data",
+    firstName: "Data",
+    lastName: "Sung"
+  },
+  "3": {
+    id: "3",
+    username: "NoRoads1955",
+    firstName: "Emmett",
+    lastName: "Brown"
   }
 };
 
@@ -54,6 +71,31 @@ const auctions = {
     id: "1",
     photo: "1",
     creator: "1"
+  },
+  "2": {
+    id: "2",
+    photo: "2",
+    creator: "2"
+  },
+  "3": {
+    id: "3",
+    photo: "9",
+    creator: "3"
+  },
+  "4": {
+    id: "4",
+    photo: "2",
+    creator: "3"
+  },
+  "5": {
+    id: "5",
+    photo: "7",
+    creator: "1"
+  },
+  "6": {
+    id: "6",
+    photo: "5",
+    creator: "2"
   }
 };
 
@@ -68,6 +110,30 @@ const bids = {
 const photos = {
   "1": {
     id: "1"
+  },
+  "2": {
+    id: "2"
+  },
+  "3": {
+    id: "3"
+  },
+  "4": {
+    id: "4"
+  },
+  "5": {
+    id: "5"
+  },
+  "6": {
+    id: "6"
+  },
+  "7": {
+    id: "7"
+  },
+  "8": {
+    id: "8"
+  },
+  "9": {
+    id: "9"
   }
 };
 
@@ -88,7 +154,8 @@ const resolvers = {
     highestOffer: root =>
       Object.values(bids)
         .filter(({ auction }) => auction === root.id)
-        .sort((a, b) => b.amount - a.amount)[0]
+        .sort((a, b) => b.amount - a.amount)[0],
+    user: root => users[root.creator]
   },
   Photo: {
     id: root => toGlobalId("Photo", root.id)
