@@ -1,7 +1,6 @@
 package main
 
 import (
-	"context"
 	"fmt"
 	"net/http"
 
@@ -14,7 +13,7 @@ func main() {
 	schemas, err := graphql.IntrospectRemoteSchemas(
 		"http://localhost:3000/",
 		"http://localhost:3001/",
-		"http://localhost:3002"
+		"http://localhost:3002",
 	)
 	if err != nil {
 		panic(err)
@@ -27,7 +26,7 @@ func main() {
 	}
 
 	// add the playground endpoint to the router
-	http.HandleFunc("/graphql", withUserInfo(gw.PlaygroundHandler))
+	http.HandleFunc("/graphql", gw.PlaygroundHandler)
 
 	// start the server
 	fmt.Println("Starting server")
