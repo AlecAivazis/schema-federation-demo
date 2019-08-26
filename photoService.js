@@ -160,7 +160,15 @@ const resolvers = {
   User: {
     id: root => toGlobalId("User", root.id),
     favoritePhoto: root => photos[root.favoritePhoto],
-    photoGallery: root => root.photoGallery.map(id => photos[id])
+    photoGallery: (user, _, { headers }) => {
+      // if the USER_ID header is not the same ID as the user
+      if (user.id !== headers.USER_ID) {
+        throw new Error("Sorry, you cannot view someone else's photo gallery.");
+      }
+
+      // the current user can see this user's photo gallery
+      return root.photoGallery.map(id => photos[id]);
+    }
   },
   Query: {
     node: (_, { id }) => {
