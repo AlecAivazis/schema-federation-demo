@@ -21,8 +21,8 @@ require (
 	github.com/konsorten/go-windows-terminal-sequences v1.0.2 // indirect
 	github.com/kr/pty v1.1.4 // indirect
 	github.com/magiconair/properties v1.8.1 // indirect
-	github.com/nautilus/gateway v0.0.7
-	github.com/nautilus/graphql v0.0.0-20190220053332-42ac2d2a1f98
+	github.com/nautilus/gateway v0.0.9
+	github.com/nautilus/graphql v0.0.6
 	github.com/opentracing/opentracing-go v1.1.0 // indirect
 	github.com/pelletier/go-toml v1.4.0 // indirect
 	github.com/prometheus/common v0.4.1 // indirect

@@ -110,6 +110,7 @@ github.com/nautilus/gateway v0.0.6 h1:afHk4B4RtueeSThhl6DWOOHA4OuWiSmeSq7AhYsbn7
 github.com/nautilus/gateway v0.0.6/go.mod h1:FBodR6iRxb4lG1tMe5bhYavmGrWjX0+OAbt/HdagJ7Y=
 github.com/nautilus/gateway v0.0.7 h1:tcpcIuRdYcwR/4QJCKm3DODguy6MahW9auopoZcFR0k=
 github.com/nautilus/gateway v0.0.7/go.mod h1:X8SLkNOIO+C50p/tWCaywy93dmXM0TvcXS1OYaBqFSc=
+github.com/nautilus/gateway/examples/auth v0.0.0-20190813042451-750729497797/go.mod h1:ThxvpsrAAbz9xB3YcVtPHPNLw9UUNCwJXfA6jBRPlx8=
 github.com/nautilus/graphql v0.0.0-20190208193207-6bb377f3952a/go.mod h1:aw58+1WuROPKYEN337vjRRaH9LfiiJKu6RwwFuF1wzw=
 github.com/nautilus/graphql v0.0.0-20190220053332-42ac2d2a1f98 h1:xz+MM8U50sjgNR1qjvh7iO4SH9zF3+fbL/kZtEjtces=
 github.com/nautilus/graphql v0.0.0-20190220053332-42ac2d2a1f98/go.mod h1:58l1aeXqmU+gAfwagVHqTUv8C6LBfa63mZ6VHj1dbXQ=

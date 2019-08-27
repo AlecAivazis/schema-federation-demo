@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"context"
 
 	"github.com/vektah/gqlparser/ast"
 
@@ -57,9 +58,9 @@ var viewerField = &gateway.QueryField{
 func main() {
 	// introspect the apis
 	schemas, err := graphql.IntrospectRemoteSchemas(
-		"http://localhost:3000/",
 		"http://localhost:3001/",
-		"http://localhost:3002",
+		"http://localhost:3002/",
+		"http://localhost:3003",
 	)
 	if err != nil {
 		panic(err)
@@ -68,7 +69,7 @@ func main() {
 	// create the gateway instance
 	gw, err := gateway.New(schemas, 
 		gateway.WithMiddlewares(forwardUserID), 
-		gateway.WithQueryFields(viewerField)
+		gateway.WithQueryFields(viewerField),
 	)
 	if err != nil {
 		panic(err)
@@ -79,7 +80,7 @@ func main() {
 
 	// start the server
 	fmt.Println("Starting server")
-	err = http.ListenAndServe(":3001", nil)
+	err = http.ListenAndServe(":3000", nil)
 	if err != nil {
 		fmt.Println(err.Error())
 	}
